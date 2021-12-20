@@ -9,6 +9,7 @@ import ru.job4j.articles.store.WordStore;
 
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class Application {
 
@@ -17,6 +18,10 @@ public class Application {
     public static final int TARGET_COUNT = 1_000_000;
 
     public static void main(String[] args) {
+
+       Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
         var properties = loadProperties();
         var wordStore = new WordStore(properties);
         var articleStore = new ArticleStore(properties);
